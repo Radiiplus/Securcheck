@@ -1,0 +1,9 @@
+{
+  "tamper": {
+    "random_string_length": 8
+  },
+  "file_utils": {
+    "log_file": "webtad.log",
+    "log_level": "INFO"
+  }
+}￼Enter
