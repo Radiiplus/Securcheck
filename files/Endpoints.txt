@@ -1,0 +1,66 @@
+/
+/home
+/profile
+/api/data
+/products
+/search?query=example
+/user?id=123
+/news/latest
+/api/v1/posts
+/page?id=456
+/blog
+/api/v2/comments
+/account
+/api/v1/messages
+/settings
+/api/v1/notifications
+/gallery
+/api/v3/events
+/contact
+/api/v1/stats
+/dashboard
+/api/v4/users
+/about
+/api/v1/settings
+/help
+/api/v5/products
+/faq
+/api/v1/info
+/login
+Data: username=user&password=pass
+/api/v1/create
+Data: {"name": "John", "age": 30}
+/upload
+Data: {"file": "file_contents"}
+/api/v1/update
+Data: {"id": 123, "name": "Updated Name"}
+/register
+Data: username=newuser&password=newpass
+/api/v1/delete
+Data: {"id": 456}
+/api/v1/edit/789
+Data: {"title": "Updated Title"}
+/api/v1/modify/1011
+Data: {"quantity": 5}
+/change-password
+Data: {"old_password": "oldpass", "new_password": "newpass"}
+/api/v2/adjust/1213
+Data: {"amount": 20}
+/api/v1/remove/1415
+Data: {"id": 1415}
+/logout
+/api/v1/cancel/1617
+Data: {"order_id": 1617}
+/api/v3/clear/1819
+Data: {"cache_id": 1819}
+/status
+/api/v1/info
+/api/v2/config
+/api/v1/modify/2021
+Data: {"description": "Updated Description"}
+/api/v1/adjust/2223
+Data: {"quantity": 10}
+/api/v1/upgrade/2425
+Data: {"level": 2}
+/api/v1/update/2627
+Data: {"status": "active"}
