@@ -36,13 +36,16 @@ def display_splash():
     print(Fore.MAGENTA + splash + Fore.RESET)
     print(Fore.BLUE + "Powered by Radiiplus - https://x.com/radiiplus" + Fore.RESET)
 
-def main():
-    # Request concurrency and timeout inputs
+def request_concurrency_timeout():
     concurrency = int(input("Enter the concurrency level: "))
     timeout = int(input("Enter the timeout in seconds: "))
+    return concurrency, timeout
 
-    # Wait for a few seconds before proceeding
-    time.sleep(3)
+def main():
+    display_splash()
+    
+    # Request concurrency and timeout inputs
+    concurrency, timeout = request_concurrency_timeout()
 
     parser = argparse.ArgumentParser(description='Script for web and endpoint checking.')
     parser.add_argument('url', help='Base URL for checking')
@@ -56,8 +59,6 @@ def main():
     args = parser.parse_args()
 
     configure_logging(log_file=args.log_file, log_level=getattr(logging, args.log_level))
-
-    display_splash()
 
     server = server_info.get_server_info(args.url)
     print(Fore.BLUE + f"Server Information: {server}" + Fore.RESET)
