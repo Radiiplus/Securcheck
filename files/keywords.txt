@@ -1,0 +1,52 @@
+password
+api key
+secret
+token
+private
+credential
+security
+hmac
+authentication
+authorization
+admin
+access
+grant
+authorize
+debug
+verbose
+troubleshoot
+log
+todo
+fixme
+implement
+feature
+api key
+service
+credentials
+token
+placeholder
+dev environment
+default
+temporary
+table
+structure
+field
+database
+path
+file
+directory
+config
+vulnerability
+issue
+bug
+security flaw
+deprecated
+obsolete
+old feature
+workaround
+hack
+temporary fix
+developer
+author
+owner
+contact
