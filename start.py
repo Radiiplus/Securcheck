@@ -3,6 +3,7 @@ import logging
 from modules import tamper, form_utils, file_utils, web, endpoint, server_info
 from tabulate import tabulate
 from colorama import Fore, Style
+import time
 
 Fore.__dict__['RESET'] = Style.RESET_ALL
 Fore.__dict__['autoreset'] = True
@@ -36,6 +37,13 @@ def display_splash():
     print(Fore.BLUE + "Powered by Radiiplus - https://x.com/radiiplus" + Fore.RESET)
 
 def main():
+    # Request concurrency and timeout inputs
+    concurrency = int(input("Enter the concurrency level: "))
+    timeout = int(input("Enter the timeout in seconds: "))
+
+    # Wait for a few seconds before proceeding
+    time.sleep(3)
+
     parser = argparse.ArgumentParser(description='Script for web and endpoint checking.')
     parser.add_argument('url', help='Base URL for checking')
     parser.add_argument('--web-output', default='output_results_web.txt', help='Output file for Web Checker results')
@@ -43,8 +51,8 @@ def main():
     parser.add_argument('--log-file', default='main_script.log', help='Log file for script execution logs')
     parser.add_argument('--log-level', default='INFO', choices=['DEBUG', 'INFO', 'WARNING', 'ERROR'], help='Logging level')
     parser.add_argument('--output-format', default='plain', choices=['plain', 'json', 'csv'], help='Output format for result files')
-    parser.add_argument('--concurrency', type=int, default=5, help='Concurrency level for endpoint checking')
-    parser.add_argument('--timeout', type=int, default=5, help='Timeout (in seconds) for endpoint checking')
+    parser.add_argument('--concurrency', type=int, default=concurrency, help='Concurrency level for endpoint checking')
+    parser.add_argument('--timeout', type=int, default=timeout, help='Timeout (in seconds) for endpoint checking')
     args = parser.parse_args()
 
     configure_logging(log_file=args.log_file, log_level=getattr(logging, args.log_level))
