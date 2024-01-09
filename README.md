@@ -29,8 +29,8 @@ Securcheck is a security assessment script designed to check the security of web
 1. Clone the repository:
 
    ```
-   git clone https://github.com/Radiiplus/Securcheck.git
-   cd Securcheck
+  git clone https://github.com/Radiiplus/Securcheck.git
+  cd Securcheck
   ```
 
 2. Install the required dependencies:
