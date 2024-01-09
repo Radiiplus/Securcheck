@@ -27,13 +27,10 @@ def configure_logging(log_file='main_script.log', log_level=logging.INFO):
     logging.basicConfig(filename=log_file, level=log_level, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def display_splash():
-    splash = r"""
-    
+    splash = r"""    
 ┓┏┳┳┓┏┓┏┓
 ┃┃┃┣┫┣ ┗┓
 ┗┛┻┻┛┗┛┗┛
-         
-
     """    
     print(Fore.MAGENTA + splash + Fore.RESET)
     print(Fore.BLUE + "Powered by Radiiplus - https://x.com/radiiplus" + Fore.RESET)
