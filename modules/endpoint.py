@@ -76,4 +76,4 @@ def check_endpoints(base_url, endpoints_file='config/Endpoints.txt', concurrency
                 headers = response.headers
                 results.append((response.request.url, status_code, headers))
 
-        return results￼Enter
+        return results
