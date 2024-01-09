@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import random
 import string
+import json
 import logging
 from .form_utils import find_form_fields
 
