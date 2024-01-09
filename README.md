@@ -44,7 +44,7 @@ Securcheck is a security assessment script designed to check the security of web
 Run the script from the command line:
 
 ```
-python start.py <base_url> --web-output <web_output_file> --endpoint-output <endpoint_output_file> --concurrency <concurrency_level> --timeout <timeout_seconds>
+python start.py <base_url> --web-output <web_output_file> --endpoint-output <endpoint_output_file> --concurrency  <concurrency_level> --timeout <timeout_seconds>
 ```
 
 Replace `<base_url>`, `<web_output_file>`, `<endpoint_output_file>`, `<concurrency_level>`, and `<timeout_seconds>` with your specific values.
