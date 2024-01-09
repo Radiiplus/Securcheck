@@ -7,6 +7,7 @@ import logging
 from concurrent.futures import ThreadPoolExecutor
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
+from colorama import Fore, Style  # Import colorama modules for color coding
 
 def setup_session():
     session = requests.Session()
@@ -74,6 +75,19 @@ def check_endpoints(base_url, endpoints_file='config/Endpoints.txt', concurrency
             if response:
                 status_code = response.status_code
                 headers = response.headers
-                results.append((response.request.url, status_code, headers))
+                url = response.request.url
+                result_entry = (url, status_code, headers)
 
-        return results
+                # Apply color coding based on the status code
+                if status_code == 200:
+                    print(Fore.GREEN + f"Successful request to {url} - Status Code: {status_code}" + Style.RESET_ALL)
+                elif 400 <= status_code < 500:
+                    print(Fore.YELLOW + f"Client error for {url} - Status Code: {status_code}" + Style.RESET_ALL)
+                elif 500 <= status_code < 600:
+                    print(Fore.RED + f"Server error for {url} - Status Code: {status_code}" + Style.RESET_ALL)
+                else:
+                    print(f"Unexpected status code for {url} - Status Code: {status_code}")
+
+                results.append(result_entry)
+
+    return results
