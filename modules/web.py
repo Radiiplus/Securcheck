@@ -6,11 +6,11 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from tabulate import tabulate
 import logging
 import configparser
+from colorama import Fore, Style, init
 
-# Suppress only the InsecureRequestWarning from urllib3 needed for 'verify=False'
+init(autoreset=True)
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-# Read configuration
 config = configparser.ConfigParser()
 config.read('config/web_config.ini')
 
@@ -19,7 +19,6 @@ inputs_file = config.get('web', 'inputs_file')
 paths_file = config.get('web', 'paths_file')
 keywords_file = config.get('web', 'keywords_file')
 
-# Set up logging
 logging.basicConfig(filename='web_script.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def read_headers_file(filename=headers_file):
@@ -45,14 +44,14 @@ def check_urls_status(tampered_urls):
             headers = response.headers
 
             message = f"Checking tampered URL {url} - Status Code: {status_code}"
-            print(message)
+            print(Fore.CYAN + message)
             logging.info(message)
 
             results_tampered.append((url, status_code, headers))
 
         except requests.RequestException as error:
             message = f"Error accessing {url}: {error}"
-            print(message)
+            print(Fore.RED + message)
             logging.error(message)
 
     return results_tampered
@@ -67,7 +66,7 @@ def check_headers_and_paths(url, paths_file, custom_headers):
         try:
             if not validators.url(full_url):
                 message = f"Invalid URL: {full_url}"
-                print(message)
+                print(Fore.YELLOW + message)
                 logging.warning(message)
                 continue
 
@@ -76,14 +75,14 @@ def check_headers_and_paths(url, paths_file, custom_headers):
             headers = response.headers
 
             message = f"Checking headers and path for {full_url} - Status Code: {status_code}"
-            print(message)
+            print(Fore.CYAN + message)
             logging.info(message)
 
             results_scan.append((full_url, path, status_code, headers))
 
         except Exception as error:
             message = f"Error accessing {full_url}: {error}"
-            print(message)
+            print(Fore.RED + message)
             logging.error(message)
 
     return results_scan
@@ -100,18 +99,18 @@ def check_webpage_for_keywords(url, keywords_file):
         found_keywords = [(url, keyword) for keyword in keywords if keyword in content]
 
         if found_keywords:
-            print("Found sensitive keywords in webpage comments:")
+            print(Fore.YELLOW + "Found sensitive keywords in webpage comments:")
             for found_keyword in found_keywords:
-                print(f"- {found_keyword}")
+                print(Fore.YELLOW + f"- {found_keyword}")
                 logging.warning(f"Found sensitive keyword: {found_keyword}")
         else:
-            print("No sensitive keywords found in webpage comments.")
+            print(Fore.GREEN + "No sensitive keywords found in webpage comments.")
             logging.info("No sensitive keywords found in webpage comments.")
 
         return found_keywords
 
     except requests.RequestException as error:
         message = f"Error accessing the webpage: {error}"
-        print(message)
+        print(Fore.RED + message)
         logging.error(message)
         return []
