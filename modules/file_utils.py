@@ -11,6 +11,7 @@ def load_config():
 
 config = load_config()
 config_path = 'config/config.json' 
+
 def configure_logging():
     logging.basicConfig(
         filename=config.get('log_file', 'webtad.log'),
@@ -35,6 +36,7 @@ def save_to_file(data, output_file='tampered_results.txt', output_format='plain'
                 logging.warning("Unsupported output format. Saving as plain text.")
                 for entry in data:
                     file.write(str(entry) + '\n')
+
         logging.info(f"Tampered results saved to {output_file} in {output_format} format.")
     except Exception as error:
         logging.error(f"Error saving tampered results: {error}")
