@@ -12,7 +12,7 @@ config = {}
 def load_config():
     global config
     try:
-        config_path = 'config/config.json' 
+        config_path = 'config/config.json'
 
         with open('config.json', 'r') as config_file:
             config = json.load(config_file).get('tamper', {})
@@ -48,6 +48,8 @@ def tamper_input(url, form, field, tampered_value):
                     data[field_name] = form_field.get('value', '')
 
         tampered_response = requests.request(form_method, form_action, data=data)
+        logging.info(f"Tampered input field '{field}' in form on {url} - Status Code: {tampered_response.status_code}")
+
         return tampered_response.text
 
     except requests.RequestException as error:
