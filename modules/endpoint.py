@@ -39,7 +39,7 @@ def generate_random_data_for_endpoint(endpoint):
         return generate_random_file_contents()
     elif '"id":' in endpoint:
         return {"id": random.randint(100, 999)}
-    # ... (add more cases based on your needs)
+    
 
 def send_request(session, url, method='GET', data=None):
     try:
